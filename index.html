@@ -1,1 +1,505 @@
-<h1>ola</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Império das Refeições | Almoço Caseiro de Segunda a Sábado</title>
+    <meta name="description" content="No Império das Refeições servimos almoços caseiros e saborosos de segunda a sábado. Pratos frescos com tempero de casa, marmitex e entrega.">
+    <meta name="keywords" content="almoço, comida caseira, restaurante, marmitex, entrega de comida, prato feito">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E67E22',
+                        secondary: '#D35400',
+                        accent: '#E74C3C',
+                        dark: '#2C3E50',
+                        light: '#ECF0F1'
+                    },
+                    fontFamily: {
+                        'sans': ['"Open Sans"', 'sans-serif'],
+                        'serif': ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap');
+        
+        .hero-slide {
+            animation: fade 12s infinite;
+            opacity: 0;
+        }
+        
+        .hero-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .hero-slide:nth-child(2) {
+            animation-delay: 4s;
+        }
+        
+        .hero-slide:nth-child(3) {
+            animation-delay: 8s;
+        }
+        
+        @keyframes fade {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            30% { opacity: 1; }
+            40% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .whatsapp-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #25D366 !important;
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-utensils text-primary text-2xl mr-2"></i>
+                <h1 class="text-xl font-bold text-dark">Império das Refeições</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-dark hover:text-primary transition">Home</a></li>
+                    <li><a href="#sobre" class="text-dark hover:text-primary transition">Sobre</a></li>
+                    <li><a href="#cardapio" class="text-dark hover:text-primary transition">Cardápio</a></li>
+                    <li><a href="#pedido" class="text-dark hover:text-primary transition">Faça seu Pedido</a></li>
+                    <li><a href="#contato" class="text-dark hover:text-primary transition">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-dark" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-md" id="mobile-menu">
+            <ul class="space-y-3">
+                <li><a href="#home" class="block py-2 text-dark hover:text-primary transition">Home</a></li>
+                <li><a href="#sobre" class="block py-2 text-dark hover:text-primary transition">Sobre</a></li>
+                <li><a href="#cardapio" class="block py-2 text-dark hover:text-primary transition">Cardápio</a></li>
+                <li><a href="#pedido" class="block py-2 text-dark hover:text-primary transition">Faça seu Pedido</a></li>
+                <li><a href="#contato" class="block py-2 text-dark hover:text-primary transition">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen pt-16">
+        <!-- Hero Slides -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');"></div>
+            <div class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1512621776951-ab57162f5d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');"></div>
+            <div class="hero-slide absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+        
+        <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-white text-lg md:text-xl mb-4 font-semibold">👉 Sabor que acolhe. Pratos frescos e caseiros servidos todos os dias no almoço. Venha experimentar!</p>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Império das Refeições</h1>
+                <p class="text-white text-xl mb-8">Almoço caseiro de segunda a sábado</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#cardapio" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition duration-300">Ver Cardápio</a>
+                    <a href="#pedido" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-full transition duration-300">Fazer Pedido</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-dark">Sobre o Império das Refeições</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Equipe do Império das Refeições" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <p class="text-lg mb-4">Há mais de 10 anos, o <span class="font-bold text-primary">Império das Refeições</span> vem conquistando clientes com sua comida caseira e atendimento próximo. Tudo começou com Dona Maria, que transformou seu talento na cozinha em um negócio de família.</p>
+                    <p class="text-lg mb-4">Nossa filosofia é simples: ingredientes frescos, tempero caseiro e muito carinho no preparo. Cada prato é feito com a mesma dedicação que teríamos ao receber amigos em casa.</p>
+                    <p class="text-lg mb-6">Hoje, continuamos mantendo essa tradição, servindo almoços saborosos que trazem conforto e satisfação a todos que nos visitam.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="bg-primary text-white p-3 rounded-full">
+                            <i class="fas fa-utensils text-xl"></i>
+                        </div>
+                        <p class="font-semibold">Pratos frescos preparados diariamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-4 text-dark">Cardápio da Semana</h2>
+            <p class="text-center text-lg mb-12 text-gray-600">Servimos almoço de segunda a sábado, das 11h às 15h</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Monday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Feijoada" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Segunda-feira</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 28,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Feijoada Completa</h4>
+                        <p class="text-gray-600 mb-4">Nossa tradicional feijoada com costelinha, linguiça calabresa, carne seca e acompanhamentos: arroz, couve refogada, farofa e laranja.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+                
+                <!-- Tuesday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Frango" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Terça-feira</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 24,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Frango Assado</h4>
+                        <p class="text-gray-600 mb-4">Coxa e sobrecoxa de frango assadas no forno com tempero caseiro, acompanha arroz branco, feijão tropeiro e salada de folhas.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+                
+                <!-- Wednesday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Peixe" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Quarta-feira</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 32,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Filé de Peixe Grelhado</h4>
+                        <p class="text-gray-600 mb-4">Filé de tilápia grelhado com molho de alcaparras, acompanha arroz de brócolis, purê de batata baroa e legumes no vapor.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+                
+                <!-- Thursday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1601050690646-5b6e36a8c2a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lasanha" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Quinta-feira</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 26,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Lasanha à Bolonhesa</h4>
+                        <p class="text-gray-600 mb-4">Lasanha caseira com massa fresca, molho bolonhesa, queijo muçarela e parmesão. Acompanha salada caprese.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+                
+                <!-- Friday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Strogonoff" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sexta-feira</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 27,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Strogonoff de Carne</h4>
+                        <p class="text-gray-600 mb-4">Clássico strogonoff de carne com molho cremoso, acompanha arroz branco, batata palha e salada de pepino.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+                
+                <!-- Saturday -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Churrasco" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Sábado</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">R$ 34,90</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Espetinho Misto</h4>
+                        <p class="text-gray-600 mb-4">Espetinho de carne, frango e linguiça, acompanha arroz, farofa, vinagrete, pão de alho e mandioca frita.</p>
+                        <a href="#pedido" class="text-primary font-semibold hover:underline">Pedir este prato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="pedido" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-4 text-dark">Faça seu Pedido</h2>
+            <p class="text-center text-lg mb-12 text-gray-600">Envie seu pedido diretamente para o nosso WhatsApp</p>
+            
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-lg shadow-md p-6 md:p-8">
+                <form id="order-form">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nome *</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="phone" class="block text-gray-700 font-semibold mb-2">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="dish" class="block text-gray-700 font-semibold mb-2">Prato Escolhido *</label>
+                        <select id="dish" name="dish" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Selecione um prato</option>
+                            <option value="Feijoada Completa - Segunda-feira - R$ 28,90">Feijoada Completa - Segunda-feira - R$ 28,90</option>
+                            <option value="Frango Assado - Terça-feira - R$ 24,90">Frango Assado - Terça-feira - R$ 24,90</option>
+                            <option value="Filé de Peixe Grelhado - Quarta-feira - R$ 32,90">Filé de Peixe Grelhado - Quarta-feira - R$ 32,90</option>
+                            <option value="Lasanha à Bolonhesa - Quinta-feira - R$ 26,90">Lasanha à Bolonhesa - Quinta-feira - R$ 26,90</option>
+                            <option value="Strogonoff de Carne - Sexta-feira - R$ 27,90">Strogonoff de Carne - Sexta-feira - R$ 27,90</option>
+                            <option value="Espetinho Misto - Sábado - R$ 34,90">Espetinho Misto - Sábado - R$ 34,90</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="quantity" class="block text-gray-700 font-semibold mb-2">Quantidade *</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Tipo de Pedido *</label>
+                        <div class="flex flex-col space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="order-type" value="Retirada" checked class="text-primary focus:ring-primary">
+                                <span class="ml-2">Marmitex para Retirada</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="order-type" value="Entrega" class="text-primary focus:ring-primary">
+                                <span class="ml-2">Entrega (taxa conforme localização)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="delivery-fields" class="hidden mb-6">
+                        <label for="address" class="block text-gray-700 font-semibold mb-2">Endereço de Entrega *</label>
+                        <input type="text" id="address" name="address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="neighborhood" class="block text-gray-700 font-semibold mb-2">Bairro *</label>
+                                <input type="text" id="neighborhood" name="neighborhood" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="complement" class="block text-gray-700 font-semibold mb-2">Complemento</label>
+                                <input type="text" id="complement" name="complement" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="notes" class="block text-gray-700 font-semibold mb-2">Observações</label>
+                        <textarea id="notes" name="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12 text-dark">Contato</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Horário de Funcionamento</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-clock text-primary"></i>
+                            <span>Segunda a Sábado: 11h às 15h</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-clock text-gray-400"></i>
+                            <span class="text-gray-500">Domingo: Fechado</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mt-8 mb-4">Endereço</h3>
+                    <div class="flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                        <p>Rua das Delícias, 123<br>Bairro Saboroso<br>São Paulo - SP</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Entre em Contato</h3>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5511999999999" class="whatsapp-btn block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> (11) 99999-9999
+                        </a>
+                        
+                        <a href="tel:+5511999999999" class="block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fas fa-phone"></i> Ligar para o Restaurante
+                        </a>
+                        
+                        <a href="https://instagram.com/imperiodasrefeicoes" class="block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fab fa-instagram"></i> @imperiodasrefeicoes
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-2">Estacionamento</h4>
+                        <p class="text-gray-600">Temos convênio com o estacionamento da Rua das Flores, 456 (2 minutos a pé). Apresente o ticket para desconto.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 max-w-4xl mx-auto">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.075426745291!2d-46.6534269246871!3d-23.5657343617271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1687893123456!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-md"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-utensils text-primary text-xl"></i>
+                        <h2 class="text-xl font-bold">Império das Refeições</h2>
+                    </div>
+                    <p class="text-gray-400 mt-1">Todos os direitos reservados © 2023</p>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/imperiodasrefeicoes" class="text-white hover:text-primary transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/5511999999999" class="text-white hover:text-green-400 transition">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fas fa-lock text-primary"></i>
+                    <span>Site Seguro</span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">Desenvolvido com ❤️ para quem ama boa comida</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Show/hide delivery fields based on order type
+        const orderTypeRadios = document.querySelectorAll('input[name="order-type"]');
+        const deliveryFields = document.getElementById('delivery-fields');
+        
+        orderTypeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'Entrega') {
+                    deliveryFields.classList.remove('hidden');
+                    // Make delivery fields required
+                    document.getElementById('address').required = true;
+                    document.getElementById('neighborhood').required = true;
+                } else {
+                    deliveryFields.classList.add('hidden');
+                    // Remove required from delivery fields
+                    document.getElementById('address').required = false;
+                    document.getElementById('neighborhood').required = false;
+                }
+            });
+        });
+
+        // WhatsApp order form submission
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const dish = document.getElementById('dish').value;
+            const quantity = document.getElementById('quantity').value;
+            const orderType = document.querySelector('input[name="order-type"]:checked').value;
+            const notes = document.getElementById('notes').value;
+            
+            let deliveryInfo = '';
+            if (orderType === 'Entrega') {
+                const address = document.getElementById('address').value;
+                const neighborhood = document.getElementById('neighborhood').value;
+                const complement = document.getElementById('complement').value;
+                
+                deliveryInfo = `\n*Endereço de Entrega:* ${address}, ${neighborhood}`;
+                if (complement) deliveryInfo += ` (${complement})`;
+            }
+            
+            const message = `*Novo Pedido - Império das Refeições*\n\n` +
+                            `*Nome:* ${name}\n` +
+                            `*Telefone:* ${phone}\n` +
+                            `*Prato Escolhido:* ${dish}\n` +
+                            `*Quantidade:* ${quantity}\n` +
+                            `*Tipo de Pedido:* ${orderType}${deliveryInfo}\n` +
+                            `*Observações:* ${notes || 'Nenhuma'}\n\n` +
+                            `_Pedido enviado através do site_`;
+            
+            const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
